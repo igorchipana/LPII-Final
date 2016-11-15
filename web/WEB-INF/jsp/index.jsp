@@ -6,15 +6,36 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome to Spring Web MVC project</title>
+        
     </head>
 
     <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project.</p>
-        <p><i>To display a different welcome page for this project, modify</i>
-            <tt>index.jsp</tt> <i>, or create your own welcome page then change
-                the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
-                welcome page and also update the welcome-file setting in</i>
-            <tt>web.xml</tt>.</p>
-        <div class="btn btn-danger">hola</div>
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="#"><b>SPE</b>UPeU</a>
+            </div>
+            <form action="login" method="post">
+                <div class="login-box-body" style="box-shadow: 0 0 20px 0 black;">
+                    <p class="login-box-msg">Iniciar Sesión</p>
+
+                    <div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" placeholder="Usuario" name="user">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="pass">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div> 
     </body>
 </html>
