@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -8,11 +9,11 @@
         <title>Welcome to Spring Web MVC project</title>
         
     </head>
-
+         
     <body>
         <div class="login-box">
             <div class="login-logo">
-                <a href="#"><b>SPE</b>UPeU</a>
+                <a href="#"><b>Descanso Médico</b>UPeU</a>
             </div>
             <form action="login" method="post">
                 <div class="login-box-body" style="box-shadow: 0 0 20px 0 black;">
