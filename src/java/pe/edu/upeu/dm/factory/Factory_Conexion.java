@@ -13,7 +13,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author SONY
+ * @author Igor
  */
 public class Factory_Conexion {
   

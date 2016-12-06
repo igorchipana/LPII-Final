@@ -38,18 +38,16 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
             ps = cn.prepareStatement(SQL_VALIDA);
             ps.setString(1, user);
             ps.setString(2, clave);
+           
             rs = ps.executeQuery();
             while(rs.next()){
-                op = 1;
+                op = rs.getInt("usuario_id");
             }
         } catch (Exception e) {
             System.out.println("Error: "+e);
         }
         return op;
     }
-    
-    
-    
     
     
 

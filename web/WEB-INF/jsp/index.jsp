@@ -7,7 +7,7 @@
     </head>
          
      <body class="hold-transition login-page" onload="nobackbutton()">
-         <div class="login-box" style="width: 22%; margin: 0 auto;margin-top:10%;" aling="center">
+         <div class="login-box" style="width: 20%; margin: 0 auto;margin-top:10%;" aling="center">
              <div class="login-logo" style="text-align: center;">
                 <a href="#"><b><h1>Descanso Médico</h1></b><h1>UPeU</h1></a>
             </div>
@@ -24,7 +24,7 @@
                             <input type="password" class="form-control" placeholder="Contraseña" name="clave">
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
-                        <div class="row" style="margin:8px ;">
+                        <div class="row" style="margin:9px ;">
                             <div class="col-xs-12" >
                                 <button type="submit" class="btn btn-primary btn-block " style="margin-bottom: 7px;" >Ingresar</button>
                             </div>
