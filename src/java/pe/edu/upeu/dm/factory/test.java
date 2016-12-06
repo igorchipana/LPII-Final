@@ -27,8 +27,8 @@ public class test {
     static Connection cx;
 
     public static void main(String[] args) {
-        //conex();
-        listar();
+        conex();
+        //listar();
     }
 //        public static void conex(){
 //        cx = Factory_Conexion.getConexion();
@@ -46,6 +46,14 @@ public class test {
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).getUser());
             System.out.println(lista.get(i).getPass());
+        }
+    }
+    static void conex() {
+        cx = Factory_Conexion.getConexion();
+        if (cx != null) {
+            System.out.println("Exito al conectar");
+        } else {
+            System.out.println("Error al conectar");
         }
     }
 

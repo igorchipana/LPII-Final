@@ -28,12 +28,13 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
     private final String SQL_READALL = "SELECT * FROM USUARIO";
     private final String SQL_READ = "SELECT * FROM USUARIO WHERE USUARIO_ID=?";
     private final String DELETE = "DELETE FROM USUARIO WHERE USUARIO_ID=?";
-    private final static String SQL_VALIDA = "SELECT * FROM USUARIO WHERE USSER=? AND PASS=?";
+    private final static String SQL_VALIDA = "SELECT usuario_id FROM USUARIO WHERE USER=? AND PASS=?";
     
     
     public int validar1(String user, String clave){
         int op=0;
         try {
+            System.out.println("USUARIO= "+user+" CLAVE= "+clave);
             cn = Factory_Conexion.getConexion();
             ps = cn.prepareStatement(SQL_VALIDA);
             ps.setString(1, user);
@@ -42,6 +43,7 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
             rs = ps.executeQuery();
             while(rs.next()){
                 op = rs.getInt("usuario_id");
+                System.out.print("OP="+op+"  ");
             }
         } catch (Exception e) {
             System.out.println("Error: "+e);
