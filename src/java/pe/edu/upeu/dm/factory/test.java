@@ -6,6 +6,7 @@
 package pe.edu.upeu.dm.factory;
 //import Modelo.Modelo_Persona;
 //import DAO.PersonaDAO;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,21 +14,22 @@ import java.util.List;
 import javax.management.Query;
 import pe.edu.upeu.dm.DAO.UsuarioDAO;
 import pe.edu.upeu.dm.Modelo.Modelo_Usuario;
+
 /**
  *
  * @author Igor
  */
 public class test {
-      //static List<Modelo_Persona> lista = new ArrayList<>();
+    //static List<Modelo_Persona> lista = new ArrayList<>();
     //  static Modelo_Persona a = new Modelo_Persona();
-     static UsuarioDAO aO = new UsuarioDAO();
-      static Connection cx;
-     
-     
-       public static void main(String[] args) {
-           //conex();
-             listar();
-       }  
+
+    static UsuarioDAO aO = new UsuarioDAO();
+    static Connection cx;
+
+    public static void main(String[] args) {
+        //conex();
+        listar();
+    }
 //        public static void conex(){
 //        cx = Factory_Conexion.getConexion();
 //        if(cx!=null){
@@ -37,20 +39,18 @@ public class test {
 //        System.out.println("No hay Conexión =(");
 //        }
 //    }
-       public static void listar(){
-          
-         List<Modelo_Usuario> lista = aO.readall();
-        for(int i=0;i<lista.size();i++){
+
+    public static void listar() {
+
+        List<Modelo_Usuario> lista = aO.readall();
+        for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).getUser());
-             System.out.println(lista.get(i).getPass());
+            System.out.println(lista.get(i).getPass());
         }
-    } 
-    
-        
-}     
-           
-       
-    
+    }
+
+}
+
 //                   
 //           test query =new test();
 //           String consulta="select*from persona";
