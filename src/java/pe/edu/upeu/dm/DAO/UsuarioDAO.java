@@ -29,29 +29,26 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
     private final String SQL_READ = "SELECT * FROM USUARIO WHERE USUARIO_ID=?";
     private final String DELETE = "DELETE FROM USUARIO WHERE USUARIO_ID=?";
     private final static String SQL_VALIDA = "SELECT usuario_id FROM USUARIO WHERE USER=? AND PASS=?";
-    
-    
-    public int validar1(String user, String clave){
-        int op=0;
+
+    public int validar1(String user, String clave) {
+        int op = 0;
         try {
-            System.out.println("USUARIO= "+user+" CLAVE= "+clave);
+            System.out.println("USUARIO= " + user + " CLAVE= " + clave);
             cn = Factory_Conexion.getConexion();
             ps = cn.prepareStatement(SQL_VALIDA);
             ps.setString(1, user);
             ps.setString(2, clave);
-           
+
             rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 op = rs.getInt("usuario_id");
-                System.out.print("OP="+op+"  ");
+                System.out.print("OP=" + op + "  ");
             }
         } catch (Exception e) {
-            System.out.println("Error: "+e);
+            System.out.println("Error: " + e);
         }
         return op;
     }
-    
-    
 
     public List<Modelo_Persona> validar(String usser, String pass) {
         Modelo_Persona m = new Modelo_Persona();
@@ -101,7 +98,7 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
     }
 
     @Override
-     public List<Modelo_Usuario> read(int key) {
+    public List<Modelo_Usuario> read(int key) {
         List<Modelo_Usuario> list = new ArrayList<>();
         try {
             cn = Factory_Conexion.getConexion();
@@ -116,11 +113,9 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
                 us.setUser(rs.getString("USER"));
                 us.setPass(rs.getString("PASS"));
                 list.add(us);
-
             }
-
         } catch (Exception e) {
-
+            System.out.println("Error " + e);
         }
         return list;
 
@@ -138,13 +133,13 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
 
     @Override
     public List<Modelo_Usuario> readall() {
-          List<Modelo_Usuario> list = new ArrayList<>();
+        List<Modelo_Usuario> list = new ArrayList<>();
         try {
             cn = Factory_Conexion.getConexion();
             ps = cn.prepareStatement(SQL_READALL);
             rs = ps.executeQuery();
             while (rs.next()) {
-                 Modelo_Usuario us = new Modelo_Usuario();
+                Modelo_Usuario us = new Modelo_Usuario();
                 us.setIdrol(rs.getString("ROL_ID"));
                 us.setIdtrabajador(rs.getString("TRABAJADOR_ID"));
                 us.setIdusuario(rs.getString("USUARIO_ID"));
@@ -157,6 +152,4 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
         }
         return list;
     }
-
-
 }
