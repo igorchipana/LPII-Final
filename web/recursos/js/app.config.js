@@ -308,7 +308,7 @@
 				}
 			},
 			'help' : function() {
-				$('#voiceModal').removeData('modal').modal( { remote: "ajax/modal-content/modal-voicecommand.html", show: true } );
+				$('#voiceModal').removeData('modal').modal( { remote: "resources/ajax/modal-content/modal-voicecommand.html", show: true } );
 				if ($('#speech-btn .popover').is(':visible')) {
 					$('#speech-btn .popover').fadeOut(250);
 				}
