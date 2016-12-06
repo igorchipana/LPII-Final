@@ -16,50 +16,49 @@ import java.sql.Statement;
  * @author Igor
  */
 public class Factory_Conexion {
-  
+
     private final static String URL = "jdbc:oracle:thin:@localhost:1521:system";// system varia de acuerdo a tu instalacion quiza sea xe o orcl o system
     private final static String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private final static String USER = "system";//usuario de tu base de datos o nombre de ella
     private final static String CLAVE = "Shinoyojona1";//password
     private static Connection cx;
-    
-        public static Connection getConexion(){
+
+    public static Connection getConexion() {
         try {
             Class.forName(DRIVER);
-            if(cx==null){
+            if (cx == null) {
                 cx = DriverManager.getConnection(URL, USER, CLAVE);
             }
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error: "+e);
+            System.out.println("Error: " + e);
         }
         return cx;
     }
-      public ResultSet query(String sql){
-          
-    Statement st;
-    ResultSet rs = null;
+
+    public ResultSet query(String sql) {
+        Statement st;
+        ResultSet rs = null;
         try {
-            Connection conexion=this.getConexion();   
+            Connection conexion = this.getConexion();
             st = conexion.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    
-    return rs;
+        return rs;
     }
-      
-     public static boolean cerrar() {
-        boolean ok=false;
+
+    public static boolean cerrar() {
+        boolean ok = false;
         try {
             cx.close();
-            ok=true;
+            ok = true;
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         return ok;
-    } 
-      
+    }
+
 //    public Statement conexion(){
 //       try{
 //        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
@@ -73,7 +72,6 @@ public class Factory_Conexion {
 //           return null;
 //}
 //}   
-
 //    public LinkedList<String> query(String from){
 //        try{
 //            Statement st=conexion();
@@ -90,5 +88,4 @@ public class Factory_Conexion {
 //        }
 //    
 //    }
-    
 }
