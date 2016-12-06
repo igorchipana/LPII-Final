@@ -14,13 +14,9 @@ import java.util.List;
 public interface Operaciones<Entidad> {
     
     public boolean create(Entidad e);
-
     public List<Entidad> read(int key);
-
-    public boolean delete(int key);
-
     public boolean update(Entidad e);
-
+    public boolean delete(int key);
     public List<Entidad> readall();
     
 }

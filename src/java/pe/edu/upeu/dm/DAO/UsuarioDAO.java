@@ -113,7 +113,7 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
                 us.setIdrol(rs.getString("ROL_ID"));
                 us.setIdtrabajador(rs.getString("TRABAJADOR_ID"));
                 us.setIdusuario(rs.getString("USUARIO_ID"));
-                us.setUser(rs.getString("USSER"));
+                us.setUser(rs.getString("USER"));
                 us.setPass(rs.getString("PASS"));
                 list.add(us);
 

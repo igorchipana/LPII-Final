@@ -28,40 +28,39 @@ import pe.edu.upeu.dm.Modelo.Modelo_Usuario;
  */
 @Controller
 public class LoginControl {
-    
-    private  UsuarioDAO aO = new UsuarioDAO();
+
+    private UsuarioDAO aO = new UsuarioDAO();
+
     @RequestMapping("/index")
-    public String index(){
-    return "index";
+    public String index() {
+        return "index";
     }
 //    Operaciones Opera = new UsuarioDAO();
 ////    Modelo_Persona user = new Modelo_Persona();
 //    Map<String, Object> rpta = new HashMap<>();
 //    String url;
 
-   
-    
-@RequestMapping("/login")
-    public String principal(HttpServletRequest request, HttpServletResponse response){
+    @RequestMapping("/login")
+    public String principal(HttpServletRequest request, HttpServletResponse response) {
         String url = "index";
-        String  user = request.getParameter("user");
-        String  clave = request.getParameter("clave");
+        String user = request.getParameter("user");
+        String clave = request.getParameter("clave");
         try {
-            if(aO.validar1(user, clave)>0){
+            if (aO.validar1(user, clave) > 0) {
                 request.setAttribute("user", user);
-                Modelo_Usuario u=aO.read(aO.validar1(user, clave)).get(0);
-                if("1".equals(u.getIdrol())){
+                Modelo_Usuario u = aO.read(aO.validar1(user, clave)).get(0);
+                if ("1".equals(u.getIdrol())) {
                     return "VistaAdministrador";
-                }else if("2".equals(u.getIdrol())){
+                } else if ("2".equals(u.getIdrol())) {
                     return "VistaSecretaria";
-                }else if("3".equals(u.getIdrol())){
+                } else if ("3".equals(u.getIdrol())) {
                     return "Vista-JefeArea";
                 }
-            url = "principal";
+                url = "principal";
             }
         } catch (Exception e) {
         }
-        
-    return url;
-    }  
-}  
+
+        return url;
+    }
+}
