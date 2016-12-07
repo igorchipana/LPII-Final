@@ -28,12 +28,12 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
     private final String SQL_READALL = "SELECT * FROM USUARIO";
     private final String SQL_READ = "SELECT * FROM USUARIO WHERE USUARIO_ID=?";
     private final String DELETE = "DELETE FROM USUARIO WHERE USUARIO_ID=?";
-    private final static String SQL_VALIDA = "SELECT usuario_id FROM USUARIO WHERE USER=? AND PASS=?";
+    private final static String SQL_VALIDA = "SELECT * FROM USUARIO WHERE USSER=? AND PASS=?";
 
     public int validar1(String user, String clave) {
         int op = 0;
         try {
-            System.out.println("USUARIO= " + user + " CLAVE= " + clave);
+            System.out.println("USSER= " + user + " CLAVE= " + clave);
             cn = Factory_Conexion.getConexion();
             ps = cn.prepareStatement(SQL_VALIDA);
             ps.setString(1, user);
@@ -42,7 +42,7 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
             rs = ps.executeQuery();
             while (rs.next()) {
                 op = rs.getInt("usuario_id");
-                System.out.print("OP=" + op + "  ");
+               System.out.print("OP=" + op + "  ");
             }
         } catch (Exception e) {
             System.out.println("Error: " + e);
@@ -94,7 +94,25 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
 
     @Override
     public boolean create(Modelo_Usuario e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean m = false;
+        sql = "INSERT INTO USUARIO(USUARIO_ID,TRABAJADOR_ID,ROL_ID,USSER,PASS) VALUES(NULL,?,?,?,?,?)";
+        try {
+            cn = Factory_Conexion.getConexion();
+            ps = cn.prepareStatement(sql);
+            ps.setString(1, e.getIdrol());
+            ps.setString(2, e.getIdtrabajador());
+            ps.setString(3, e.getIdusuario());
+            ps.setString(4, e.getPass());
+            ps.setString(5, e.getUser());
+           
+            int a = ps.executeUpdate();
+            if (a > 0) {
+                m = true;
+            }
+        } catch (Exception p) {
+            System.out.println("Error al Crear Usuario " + p);
+        }
+        return m;
     }
 
     @Override
@@ -110,7 +128,7 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
                 us.setIdrol(rs.getString("ROL_ID"));
                 us.setIdtrabajador(rs.getString("TRABAJADOR_ID"));
                 us.setIdusuario(rs.getString("USUARIO_ID"));
-                us.setUser(rs.getString("USER"));
+                us.setUser(rs.getString("USSER"));
                 us.setPass(rs.getString("PASS"));
                 list.add(us);
             }
@@ -123,12 +141,38 @@ public class UsuarioDAO implements Operaciones<Modelo_Usuario> {
 
     @Override
     public boolean delete(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean m = false;
+        try {
+            cn = Factory_Conexion.getConexion();
+            ps = cn.prepareStatement(DELETE);
+            ps.setInt(1, key);
+            int a = ps.executeUpdate();
+            if (a > 0) {
+                m = true;
+            }
+        } catch (Exception ex) {
+            System.out.println("Error al eliminar usuario " + ex);
+        }
+        return m;
     }
-
     @Override
     public boolean update(Modelo_Usuario e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       boolean m = false;
+        sql = "UPDATE USUARIO SET USSER=? ,PASS=? WHERE USUARIO_ID=?";
+        try {
+            cn = Factory_Conexion.getConexion();
+            ps = cn.prepareStatement(sql);
+            ps.setString(1, e.getUser());
+            ps.setString(2, e.getPass());
+            ps.setString(3, e.getIdusuario());
+            int a = ps.executeUpdate();
+            if (a > 0) {
+                m = true;
+            }
+        } catch (Exception ex) {
+            System.out.println("Error al Actualizar Usuario " + ex);
+        }
+        return m;
     }
 
     @Override
