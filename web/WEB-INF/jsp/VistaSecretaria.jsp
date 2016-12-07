@@ -56,11 +56,11 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+                        <a href="<%= request.getContextPath()%>/listarTrabajadores" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Data Trabajadores</span></a>
                     </li>
                     
                     <li class="top-menu-invisible">
-                        <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">SmartAdmin Intel</span></a>
+                        <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Registrar Descanso</span></a>
                     </li>
 
                     <li class="treeview">
@@ -70,10 +70,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="SVLH?histo=1" target="box"><i class="fa fa-laptop" aria-hidden="true"></i> Préstamo del equipo</a></li>
-                            <li><a href="SVLH?histo=3" target="box"><i class="fa fa-globe" aria-hidden="true"></i> Todos los Préstamos</a></li>
-                        </ul>
+                        
                     </li>
                 </ul>	
 
@@ -98,14 +95,42 @@
                     
             <div id="content">
 
+   <!-- HEADER -->
+        <header id="header">
 
 
-
-
-            </div>
-            
-            
-        </div>
+        </header>
+        <!-- END HEADER -->
+        <br>
+        <br>
+    <center>
+        <div class="">	
+            <h1><span class="semi-bold">Gestión de</span> <i class="ultra-light">Talento Humano</i> <sup class="badge bg-color-red bounceIn animated"> v 2.0</sup> <br>
+                <small class="text-primary slideInRight fast animated"><strong>¡Bienvenido!</strong></small></h1>
+                  <br>
+                  <br>
+            <nav id="menu" class="nav"  >					
+                <ul class="slideInLeft fast animated" >
+                   
+                    <li >
+                        <form id="" action="menu" method="POST">
+                            <input type="hidden" name="opc" value="List_Privilegios"/>
+                            <input type="hidden" name="idmod" value=""/>
+                            <a onclick=""  href="#" style="text-decoration: none;font-size:20px " >
+                                <span class="icon">
+                                    <i aria-hidden="true" class=""></i>
+                                </span>
+                                <span></span>
+                            </a> 
+                        </form>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div><!-- /container -->
+    </center>
+      </div>    
+      </div>
     </div>
 </div>
 
