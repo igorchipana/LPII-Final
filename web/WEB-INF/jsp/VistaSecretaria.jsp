@@ -4,63 +4,30 @@
     <head>
         <meta charset="utf-8">
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-
         <title> Descanso Médico </title>
-      
-
         <%@include file="../jspf/Links.jspf" %>
- 
-    </head>
+     </head>
     
       
-    <body class="">
+     <body class="" onload="nobackbutton();">
 
         <!-- HEADER -->
         <header id="header">
             <div id="logo-group">
-
-                <span id="logo"> <img src="recursos/img/logo-white.png" alt="Descanso-Médico"> </span>
-
+                <span id="logo"> <img src="recursos/img/logoRRHH.png" style="margin-top: -7px; width:110px; height:40px;margin-left: 10px; " alt="Descanso-Médico"> </span>
             </div>
 
-
             <div class="pull-right">
-
-
                 <div id="logout" class="btn-header transparent pull-right">
                     <span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out">Salir</i></a> </span>
                 </div>
-
-
-
                 <div id="search-mobile" class="btn-header transparent pull-right">
                     <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
                 </div>
-
                 <form action="search.html" class="header-search pull-right">
                     <input id="search-fld"  type="text" name="param" placeholder="Buscador" data-autocomplete='[
-                           "ActionScript",
-                           "AppleScript",
-                           "Asp",
-                           "BASIC",
-                           "C",
-                           "C++",
-                           "Clojure",
-                           "COBOL",
-                           "ColdFusion",
-                           "Erlang",
-                           "Fortran",
-                           "Groovy",
-                           "Haskell",
-                           "Java",
-                           "JavaScript",
-                           "Lisp",
-                           "Perl",
-                           "PHP",
-                           "Python",
-                           "Ruby",
-                           "Scala",
-                           "Scheme"]'>
+                           "ActionScript", "AppleScript", "Asp", "BASIC","C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell","Java","JavaScript","Lisp", "Perl",
+                           "PHP", "Python","Ruby", "Scala","Scheme"]'>
                     <button type="submit">
                         <i class="fa fa-search"></i>
                     </button>
@@ -70,14 +37,10 @@
         </header>
         <!-- END HEADER -->
 
-        <!-- Left panel : Navigation area -->
-        <!-- Note: This width of the aside area can be adjusted through LESS variables -->
         <aside id="left-panel">
-
             <!-- User info -->
             <div class="login-info">
-                <span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-
+                <span> 
                     <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
                         <img src="recursos/img/DOCENTEM.jpg" alt="me" class="online" /> 
                         <span>
@@ -121,10 +84,7 @@
         </aside>
         
         <div id="main" role="main">
-
-       
             <div id="ribbon">
-
                 <span class="ribbon-button-alignment"> 
                     <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
                         <i class="fa fa-refresh"></i>
@@ -135,8 +95,7 @@
                     <li>Talento Humano</li><li>Descanso Médico</li><li>Archivar Data</li>
                 </ol>
             </div>
-        
-            
+                    
             <div id="content">
 
 
@@ -155,11 +114,9 @@
         <div class="col-xs-12 col-sm-6">
             <span class="txt-color-white">Aplha Team <span class="hidden-xs"> - Upeu</span> © 2016-II</span>
         </div>
-
         <div class="col-xs-6 col-sm-6 text-right hidden-xs">
             <div class="txt-color-white inline-block">
                 <i class="txt-color-blueLight hidden-mobile">Descanso Médico <i class="fa fa-clock-o"></i> <strong>- Upeu © 2016-II</strong> </i>
-
             </div>
         </div>
     </div>

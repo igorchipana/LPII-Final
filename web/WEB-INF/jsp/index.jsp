@@ -7,6 +7,15 @@
     </head>
          
      <body class="hold-transition login-page" onload="nobackbutton()">
+          
+        <header id="header">
+
+            <div id="logo-group" >
+                <span id="logos"> <img src="recursos/img/logoRRHH.png"  style="margin-top: 8px; width:110px; height:40px " alt="Talento Humano"> </span>
+            </div>
+
+        </header>
+         
          <div class="login-box" style="width: 20%; margin: 0 auto;margin-top:10%;" aling="center">
              <div class="login-logo" style="text-align: center;">
                 <a href="#"><b><h1>Descanso Médico</h1></b><h1>UPeU</h1></a>
