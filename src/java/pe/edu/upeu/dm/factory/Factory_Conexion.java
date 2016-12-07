@@ -10,6 +10,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -58,6 +61,30 @@ public class Factory_Conexion {
         }
         return ok;
     }
+    
+    
+    public static String convertFecha(String fecha) throws ParseException {
+        String nueva_fecha = null;
+        if (fecha != null) {
+            if (!fecha.equals("")) {
+                String f[] = fecha.split("-");
+                /*   if (System.getProperty("sun.desktop").trim().equals("windows")) {
+                 return f[2] + "/" + f[1] + "/" + f[0];
+                 } else {*/
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+                nueva_fecha = new SimpleDateFormat("dd-MMM-yy").format(date).toUpperCase();
+                // }
+            } else {
+                nueva_fecha = null;
+            }
+        } else if (fecha == null) {
+            nueva_fecha = null;
+        }
+        return nueva_fecha;
+
+    }
+    
+    
 
 //    public Statement conexion(){
 //       try{

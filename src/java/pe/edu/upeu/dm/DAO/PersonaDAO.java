@@ -124,7 +124,36 @@ public class PersonaDAO implements Operaciones<Modelo_Persona> {
 
     @Override
     public List<Modelo_Persona> readall() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          List<Modelo_Persona> lista = new ArrayList();
+        sql = "SELECT * FROM PERSONA";
+        try {
+            cn = Factory_Conexion.getConexion();
+            ps = cn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Modelo_Persona dto = new Modelo_Persona();
+                dto.setPersona_id(rs.getString("PERSONA_ID"));
+                    dto.setApellido_m(rs.getString("APELLIDO_M"));
+                    dto.setApellidos_p(rs.getString("APELLIDO_P"));
+                    dto.setCelular(rs.getString("CELULAR"));
+                    dto.setCorreo_inst(rs.getString("CORREO_INST"));
+                    dto.setCorreo_per(rs.getString("CORREO_PER"));
+                    dto.setDepartamento(rs.getString("DEPARTAMENTO"));
+                    dto.setDistrito(rs.getString("DISTRITO"));
+                    dto.setDni(rs.getString("DNI"));
+                    dto.setFecha_nac(rs.getString("FECHA_NAC"));
+                    dto.setNacionalidad(rs.getString("NACIONALIDAD"));
+                    dto.setNivel_educativo(rs.getString("NIVEL_EDUCATIVO"));
+                    dto.setNombres(rs.getString("NOMBRES"));
+                    dto.setProvincia(rs.getString("PROVINCIA"));
+                    dto.setSexo(rs.getString("SEXO"));
+                    dto.setTelefono(rs.getString("TELEFONO"));
+                    lista.add(dto);
+            }
+        } catch (Exception ex) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        return lista;
     }
 
 }

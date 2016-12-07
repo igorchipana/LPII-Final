@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pe.edu.upeu.dm.DAO.RolDAO;
 import pe.edu.upeu.dm.DAO.UsuarioDAO;
 import pe.edu.upeu.dm.Interfaces.Operaciones;
 import pe.edu.upeu.dm.Modelo.Modelo_Persona;
@@ -63,4 +64,11 @@ public class LoginControl {
 
         return url;
     }
+    
+RolDAO p = new RolDAO();
+@RequestMapping("/rol")
+public String principal(Model model){
+    model.addAttribute("lista",p.readall());
+return "/VistaAdministrador";
+}
 }
