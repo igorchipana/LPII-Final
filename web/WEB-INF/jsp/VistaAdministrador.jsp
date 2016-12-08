@@ -39,15 +39,7 @@
 
             <script src="<c:url value="resources/js/jquery-3.0.0.min.js"/>" type="text/javascript"></script>
             <script src="<c:url value="resources/js/materialize.min.js"/>" type="text/javascript"></script>
-            <script>
-                function exito() {
-                    var $toastContent = $('<span>¡Se ha registrado exitosamente su compra!</span>');
-                    Materialize.toast($toastContent, 5000, 'green');
-                }
-                $(document).ready(function () {
-                    $(".button-collapse").sideNav();
-                });
-            </script>
+            
             <%@include file="../jspf/footer.jspf" %>
         </body>
     </body>
