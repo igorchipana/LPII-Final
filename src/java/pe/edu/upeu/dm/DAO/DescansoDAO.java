@@ -61,7 +61,7 @@ public class DescansoDAO implements OperacionesDescanso<Modelo_Descanso>
                 Modelo_Descanso x = new Modelo_Descanso();
                 x.setIddescanso(rs.getString("descanso_id"));
                 x.setIdtrabajador(rs.getString("trabajador_id"));
-                x.setEstado(rs.getString("estadp"));
+                x.setEstado(rs.getString("estado"));
                 x.setFecha_inc(rs.getDate("fecha_ini"));
                 x.setFecha_fin(rs.getDate("fecha_fin"));
                 x.setFecha_fin(rs.getDate("Total_dias_descanso"));
