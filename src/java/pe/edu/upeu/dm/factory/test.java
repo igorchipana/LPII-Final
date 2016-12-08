@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.management.Query;
+import pe.edu.upeu.dm.DAO.TraPersoDAO;
 import pe.edu.upeu.dm.DAO.UsuarioDAO;
+import pe.edu.upeu.dm.Modelo.Modelo_TraPerso;
 import pe.edu.upeu.dm.Modelo.Modelo_Usuario;
 
 /**
@@ -24,11 +26,12 @@ public class test {
     //  static Modelo_Persona a = new Modelo_Persona();
 
     static UsuarioDAO aO = new UsuarioDAO();
+     static TraPersoDAO O = new TraPersoDAO();
     static Connection cx;
 
     public static void main(String[] args) {
-        conex();
-        //listar();
+        //conex();
+        listar();
     }
 //        public static void conex(){
 //        cx = Factory_Conexion.getConexion();
@@ -42,10 +45,10 @@ public class test {
 
     public static void listar() {
 
-        List<Modelo_Usuario> lista = aO.readall();
+        List<Modelo_TraPerso> lista = O.readall();
         for (int i = 0; i < lista.size(); i++) {
-            System.out.println(lista.get(i).getUser());
-            System.out.println(lista.get(i).getPass());
+            System.out.println(lista.get(i).getCodigo());
+            System.out.println(lista.get(i).getNombres());
         }
     }
     static void conex() {

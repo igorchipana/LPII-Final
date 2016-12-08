@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pe.edu.upeu.dm.DAO.PersonaDAO;
 import pe.edu.upeu.dm.DAO.RolDAO;
+import pe.edu.upeu.dm.DAO.TraPersoDAO;
 import pe.edu.upeu.dm.DAO.UsuarioDAO;
 import pe.edu.upeu.dm.Interfaces.Operaciones;
 import pe.edu.upeu.dm.Modelo.Modelo_Persona;
@@ -67,6 +68,7 @@ public class LoginControl {
     }
     
 PersonaDAO p = new PersonaDAO();
+TraPersoDAO tra = new TraPersoDAO();
 @RequestMapping("/listarTrabajadores")
 public String principal(Model model){
     model.addAttribute("lista",p.readall());
@@ -79,7 +81,7 @@ return "/VistaSecretaria";
 }
 @RequestMapping("/registrar")
 public String principal3(Model model){
-    model.addAttribute("lista",p.readall());
+    model.addAttribute("lista",tra.readall());
 return "/Reg_Secretaria";
 }
 
