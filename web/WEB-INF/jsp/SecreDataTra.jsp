@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>GTH-DescansoMédico</title>
         <%@include file="../jspf/Links.jspf" %>
-         <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
     </head>
     
@@ -109,21 +109,25 @@
                 <header id="header">
                     <h1 style="text-align: center;"><span class="semi-bold">Data de</span> <i class="ultra-light">Trabajadores</i> <br></h1>
                 </header>  
+                <div class="box-header with-border">
+                            <center> <h1> Datos de Todos los Trabajadores</h1> </center>
+                </div>
 
                 <div class="widget-body no-padding"  style="width: 80%;margin-left: 10%;margin-top: 5px;">
-                    <table  id="table_id"  cellspacing="0"  class="table table-striped table-bordered table-hover display" style="width: 100%;margin-left: 0%;">
+                    <table  id="table_id"  cellspacing="0"  class="table table-striped table-bordered  display" style="width: 100%;margin-left: 0%;">
                         <thead>
-                            <tr>
-                                <td style="text-align: center;" data-hide="phone,tablet"><i class="fa fa-fw fa-user-secret" aria-hidden="true"></i> Nombres</td>
-                                <td style="text-align: center;" data-class="expand"><i class="fa fa-fw fa-user-plus"></i> Apellidos</td>
-                                <td style="text-align: center;" data-hide="phone"><i></i> DNI</td>
-                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs" aria-hidden="true"></i> Fecha Nacimiento</td>
-                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-home text-muted hidden-md hidden-sm hidden-xs" aria-hidden="true"></i> Nacionalidad</td>
-                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-home text-muted hidden-md hidden-sm hidden-xs"></i> Departamento</td>
-                                <td style="text-align: center;" data-hide="phone,tablet"><i class="fa fa-fw fa-home txt-color-blue hidden-md hidden-sm hidden-xs"></i>Distrito</td>
-                                <td style="text-align: center;" data-class="expand"><i class="fa fa-fw fa-phone-square text-muted hidden-md hidden-sm hidden-xs"></i> Celular</td>
-                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-at text-muted hidden-md hidden-sm hidden-xs"></i> Correo Personal</td>
-                                <td style="text-align: center;" data-hide="phone"><i></i> Sexo </td>
+                            <tr class="active">
+                                <td style="text-align: center;" data-hide="phone,tablet"><i class="fa fa-fw fa-user-secret" aria-hidden="true"></i><strong> Código</strong></td>
+                                <td style="text-align: center;" data-hide="phone,tablet"><i class="fa fa-fw fa-user-secret" aria-hidden="true"></i><strong> Nombres</strong></td>
+                                <td style="text-align: center;" data-class="expand"><i class="fa fa-fw fa-user-plus"></i><strong> Apellidos</strong></td>
+                                <td style="text-align: center;" data-hide="phone"><i></i> <strong>DNI</strong></td>
+                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs" aria-hidden="true"></i> <strong>Fecha Nacimiento</strong></td>
+                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-home text-muted hidden-md hidden-sm hidden-xs" aria-hidden="true"></i><strong> Nacionalidad</strong></td>
+                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-home text-muted hidden-md hidden-sm hidden-xs"></i> <strong><strong>Departamento</strong></td>
+                                <td style="text-align: center;" data-hide="phone,tablet"><i class="fa fa-fw fa-home txt-color-blue hidden-md hidden-sm hidden-xs"></i><strong>Distrito</strong></td>
+                                <td style="text-align: center;" data-class="expand"><i class="fa fa-fw fa-phone-square text-muted hidden-md hidden-sm hidden-xs"></i> <strong>Celular</strong></td>
+                                <td style="text-align: center;" data-hide="phone"><i class="fa fa-fw fa-at text-muted hidden-md hidden-sm hidden-xs"></i> <strong>Correo Personal</strong></td>
+                                <td style="text-align: center;" data-hide="phone"><i></i><strong> Sexo </strong></td>
 
                             </tr>
                         </thead>
@@ -135,9 +139,10 @@
                             <c:forEach var="datos" begin="0" items="${lista}" varStatus="loop">    
 
                                 <tr>
+                                     <td style="text-align: center;"><c:out value="${datos.codigo}"></c:out></td>
                                     <td style="text-align: center;"><c:out value="${datos.nombres}"></c:out></td>
                                     <td style="text-align: center;"><c:out value="${datos.apellidos_p}"></c:out> 
-                                        <c:out value="${datos.apellido_m}"></c:out></td>
+                                        &nbsp;&nbsp; <c:out value="${datos.apellido_m}"></c:out></td>
                                     <td> <c:out value="${datos.dni}"></c:out></td>
                                     <td style="text-align: center;"><c:out value="${datos.fecha_nac}"></c:out></td>
                                     <td style="text-align: center;"> <c:out value="${datos.nacionalidad}"></c:out></td>

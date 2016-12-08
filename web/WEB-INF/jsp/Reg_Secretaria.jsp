@@ -123,39 +123,39 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="marca">Nombre:</label>
-                                        <input type="text" required="" maxlength="30" onkeypress="return soloLetras(event)" class="form-control" id="marca" name="marca" placeholder="Marca">
+                                        <input type="text" required="" maxlength="30" onkeypress="return soloLetras(event)" class="form-control" id="marca" name="marca" placeholder="Nombre">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="serie">Apellido Paterno</label>
-                                        <input type="text" required="" maxlength="30" class="form-control" id="serie" name="serie" placeholder="Serie">
+                                        <input type="text" required="" maxlength="30" class="form-control" id="serie" name="serie" placeholder="Apellido Paterno">
                                     </div>
                                     
                                      <div class="form-group">
                                         <label for="serie">Fecha Inicio del Descanso</label>
-                                        <input type="date" required="" maxlength="30" class="form-control" id="serie" name="serie" placeholder="Serie">
+                                        <input type="date" required="" maxlength="30" class="form-control" id="serie" name="serie" placeholder="Fecha Inicio">
                                     </div>
                                    
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="codigo">DNI</label>
-                                        <input type="text" required="" maxlength="30"  class="form-control" id="codigo" name="codigo" placeholder="Código">
+                                        <input type="text" required="" maxlength="30"  class="form-control" id="codigo" name="codigo" placeholder="DNI">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="codigo">Apellido Materno</label>
-                                        <input type="text" required="" maxlength="30"  class="form-control" id="codigo" name="codigo" placeholder="Código">
+                                        <input type="text" required="" maxlength="30"  class="form-control" id="codigo" name="codigo" placeholder="Apellido Paterno">
                                     </div>
                                     
                                      <div class="form-group">
                                         <label for="serie">Fecha Fin del Descanso</label>
-                                        <input type="date" required="" maxlength="30" class="form-control" id="serie" name="serie" placeholder="Serie">
+                                        <input type="date" required="" maxlength="30" class="form-control" id="serie" name="serie" placeholder="Fecha Fin">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="descripcion">Motivo del descanso</label>
-                                    <textarea  required="" maxlength="120" class="form-control" rows="3" id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>
+                                    <textarea  required="" maxlength="120" class="form-control" rows="3" id="descripcion" name="descripcion" placeholder="Motivo del Descanso"></textarea>
                                 </div>
 
                                 

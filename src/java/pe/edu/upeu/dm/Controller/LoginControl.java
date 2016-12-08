@@ -71,7 +71,7 @@ PersonaDAO p = new PersonaDAO();
 TraPersoDAO tra = new TraPersoDAO();
 @RequestMapping("/listarTrabajadores")
 public String principal(Model model){
-    model.addAttribute("lista",p.readall());
+    model.addAttribute("lista",tra.readall());
 return "/SecreDataTra";
 }
 @RequestMapping("/InicioSecre")
