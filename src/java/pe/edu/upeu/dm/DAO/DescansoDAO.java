@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.dm.Interfaces.OperacionesDescanso;
 import pe.edu.upeu.dm.Modelo.Modelo_Descanso;
+import pe.edu.upeu.dm.factory.Factory_Conexion;
 
 /**
  *
@@ -54,7 +55,7 @@ public class DescansoDAO implements OperacionesDescanso<Modelo_Descanso>
     {List<Modelo_Descanso> lista = new ArrayList<>();
         sql="select * from Descanso";
         try {
-            cn = Connection.get;
+            cn = Factory_Conexion.getConexion();
             ps = cn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
