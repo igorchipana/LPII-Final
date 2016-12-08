@@ -1,0 +1,7 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div class="container">
+    <footer>
+       Copyright (c) Recursos Humanos Universidad Peruana Union 
+    </footer>
+</div>
