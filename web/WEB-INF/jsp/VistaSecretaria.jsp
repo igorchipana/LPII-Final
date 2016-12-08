@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-        <title> Descanso Médico </title>
+        <title>GTH-DescansoMédico </title>
         <%@include file="../jspf/Links.jspf" %>
      </head>
     
@@ -55,22 +55,16 @@
 
             <nav>
                 <ul>
-                    <li>
-                        <a href="<%= request.getContextPath()%>/listarTrabajadores" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Data Trabajadores</span></a>
+                    <li class="top-menu-invisible">
+                        <a href="<%=request.getContextPath()%>/InicioSecre"><i class="fa fa-lg fa-fw fa-user-md"></i> <span class="menu-item-parent">Inicio</span></a>
                     </li>
                     
-                    <li class="top-menu-invisible">
-                        <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Registrar Descanso</span></a>
+                    <li>
+                        <a href="<%= request.getContextPath()%>/listarTrabajadores" title="Dashboard"><i class="fa fa-lg fa-fw fa-folder-open"></i> <span class="menu-item-parent">Data Trabajadores</span></a>
                     </li>
-
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-history" aria-hidden="true"></i> <span>Historial de Préstamos</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        
+                                        
+                     <li>
+                        <a href="<%=request.getContextPath()%>/registrar" title="Dashboard"><i class="fa fa-lg fa-fw fa-pencil-square"></i> <span class="menu-item-parent">Registrar Descanso</span></a>
                     </li>
                 </ul>	
 
@@ -131,8 +125,7 @@
     </center>
       </div>    
       </div>
-    </div>
-</div>
+  
 
 <div class="page-footer">
     <div class="row">

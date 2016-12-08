@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>GTH-DescansoMédico</title>
         <%@include file="../jspf/Links.jspf" %>
          <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
@@ -70,23 +70,18 @@
 
             <nav>
                 <ul>
-                    <li>
-                        <a href="<%= request.getContextPath()%>/listarTrabajadores" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Data Trabajadores</span></a>
-                    </li>
-
                     <li class="top-menu-invisible">
-                        <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Registrar Descanso</span></a>
+                        <a href="<%= request.getContextPath()%>/InicioSecre"><i class="fa fa-lg fa-fw fa-user-md"></i> <span class="menu-item-parent">Inicio</span></a>
                     </li>
-
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-history" aria-hidden="true"></i> <span>Historial de Préstamos</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-
+                                        
+                    <li>
+                        <a href="<%= request.getContextPath()%>/listarTrabajadores" title="Dashboard"><i class="fa fa-lg fa-fw fa-folder-open"></i> <span class="menu-item-parent">Data Trabajadores</span></a>
                     </li>
+                    
+                    <li>
+                        <a href="<%=request.getContextPath()%>/registrar" title="Dashboard"><i class="fa fa-lg fa-fw fa-pencil-square"></i> <span class="menu-item-parent">Registrar Descanso</span></a>
+                    </li>
+                   
                 </ul>	
 
             </nav>

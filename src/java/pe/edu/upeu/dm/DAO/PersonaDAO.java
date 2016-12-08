@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.dm.Interfaces.Operaciones;
 import pe.edu.upeu.dm.Modelo.Modelo_Persona;
+import pe.edu.upeu.dm.Modelo.Modelo_Trabajador;
 import pe.edu.upeu.dm.factory.Factory_Conexion;
 
 /**
@@ -124,7 +125,7 @@ public class PersonaDAO implements Operaciones<Modelo_Persona> {
 
     @Override
     public List<Modelo_Persona> readall() {
-          List<Modelo_Persona> lista = new ArrayList();
+        List<Modelo_Persona> lista = new ArrayList();
         sql = "SELECT * FROM PERSONA";
         try {
             cn = Factory_Conexion.getConexion();
@@ -133,22 +134,22 @@ public class PersonaDAO implements Operaciones<Modelo_Persona> {
             while (rs.next()) {
                 Modelo_Persona dto = new Modelo_Persona();
                 dto.setPersona_id(rs.getString("PERSONA_ID"));
-                    dto.setApellido_m(rs.getString("APELLIDO_M"));
-                    dto.setApellidos_p(rs.getString("APELLIDO_P"));
-                    dto.setCelular(rs.getString("CELULAR"));
-                    dto.setCorreo_inst(rs.getString("CORREO_INST"));
-                    dto.setCorreo_per(rs.getString("CORREO_PER"));
-                    dto.setDepartamento(rs.getString("DEPARTAMENTO"));
-                    dto.setDistrito(rs.getString("DISTRITO"));
-                    dto.setDni(rs.getString("DNI"));
-                    dto.setFecha_nac(rs.getString("FECHA_NAC"));
-                    dto.setNacionalidad(rs.getString("NACIONALIDAD"));
-                    dto.setNivel_educativo(rs.getString("NIVEL_EDUCATIVO"));
-                    dto.setNombres(rs.getString("NOMBRES"));
-                    dto.setProvincia(rs.getString("PROVINCIA"));
-                    dto.setSexo(rs.getString("SEXO"));
-                    dto.setTelefono(rs.getString("TELEFONO"));
-                    lista.add(dto);
+                dto.setApellido_m(rs.getString("APELLIDO_M"));
+                dto.setApellidos_p(rs.getString("APELLIDO_P"));
+                dto.setCelular(rs.getString("CELULAR"));
+                dto.setCorreo_inst(rs.getString("CORREO_INST"));
+                dto.setCorreo_per(rs.getString("CORREO_PER"));
+                dto.setDepartamento(rs.getString("DEPARTAMENTO"));
+                dto.setDistrito(rs.getString("DISTRITO"));
+                dto.setDni(rs.getString("DNI"));
+                dto.setFecha_nac(rs.getString("FECHA_NAC"));
+                dto.setNacionalidad(rs.getString("NACIONALIDAD"));
+                dto.setNivel_educativo(rs.getString("NIVEL_EDUCATIVO"));
+                dto.setNombres(rs.getString("NOMBRES"));
+                dto.setProvincia(rs.getString("PROVINCIA"));
+                dto.setSexo(rs.getString("SEXO"));
+                dto.setTelefono(rs.getString("TELEFONO"));
+                lista.add(dto);
             }
         } catch (Exception ex) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -156,4 +157,43 @@ public class PersonaDAO implements Operaciones<Modelo_Persona> {
         return lista;
     }
 
+    public ArrayList listarTraPerso() {
+        ArrayList lista3 = new ArrayList();
+        List<Modelo_Persona> lista = new ArrayList();
+        List<Modelo_Trabajador> lista2 = new ArrayList();
+        sql = "SELECT * FROM TRABAJADOR A,PERSONA B WHERE A.PERSONA_ID=B.PERSONA_ID";
+        try {
+            cn = Factory_Conexion.getConexion();
+            ps = cn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Modelo_Trabajador dto2 = new Modelo_Trabajador();
+                Modelo_Persona dto = new Modelo_Persona();
+                dto.setApellido_m(rs.getString("APELLIDO_M"));
+                dto.setApellidos_p(rs.getString("APELLIDO_P"));
+                dto.setCelular(rs.getString("CELULAR"));
+                dto.setCorreo_inst(rs.getString("CORREO_INST"));
+                dto.setCorreo_per(rs.getString("CORREO_PER"));
+                dto.setDepartamento(rs.getString("DEPARTAMENTO"));
+                dto.setDistrito(rs.getString("DISTRITO"));
+                dto.setDni(rs.getString("DNI"));
+                dto.setFecha_nac(rs.getString("FECHA_NAC"));
+                dto.setNivel_educativo(rs.getString("NIVEL_EDUCATIVO"));
+                dto.setNombres(rs.getString("NOMBRES"));
+                dto.setProvincia(rs.getString("PROVINCIA"));
+                dto.setSexo(rs.getString("SEXO"));
+                dto.setTelefono(rs.getString("TELEFONO"));
+                dto2.setCodigo(rs.getString("CODIGO"));
+                dto2.setIdpersona(rs.getString("PERSONA_ID"));
+                dto2.setIdtrabajador(rs.getString("TRABAJADOR_ID"));
+                lista.add(dto);
+                lista2.add(dto2);
+            }
+            lista3.add(lista);
+            lista3.add(lista2);
+        } catch (Exception ex) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        return lista3;
+    }
 }

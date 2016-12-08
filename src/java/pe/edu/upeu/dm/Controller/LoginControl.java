@@ -72,4 +72,16 @@ public String principal(Model model){
     model.addAttribute("lista",p.readall());
 return "/SecreDataTra";
 }
+@RequestMapping("/InicioSecre")
+public String principal1(Model model){
+    model.addAttribute("lista");
+return "/VistaSecretaria";
+}
+@RequestMapping("/registrar")
+public String principal3(Model model){
+    model.addAttribute("lista",p.readall());
+return "/Reg_Secretaria";
+}
+
+
 }
